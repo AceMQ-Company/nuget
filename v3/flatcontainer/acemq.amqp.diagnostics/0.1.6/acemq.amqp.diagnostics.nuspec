@@ -11,7 +11,7 @@
     <description>A small actuator for AceMq.Amqp: Prometheus metrics, health and version over HTTP, with no ASP.NET Core or OpenTelemetry dependency.</description>
     <copyright>Copyright 2026 AceMQ</copyright>
     <tags>amqp rabbitmq messaging queue vb.net</tags>
-    <repository type="git" url="https://github.com/AceMQ-Company/acemq-dotnet-amqp" commit="4aefbcd84e550e06e4eb96f3605bf36f971c1dcb" />
+    <repository type="git" url="https://github.com/AceMQ-Company/acemq-dotnet-amqp" branch="refs/heads/main" commit="0675c20efdca9aacfa0abe16ad27dd1415ac7090" />
     <dependencies>
       <group targetFramework=".NETStandard2.0">
         <dependency id="AceMq.Amqp" version="0.1.6" exclude="Build,Analyzers" />

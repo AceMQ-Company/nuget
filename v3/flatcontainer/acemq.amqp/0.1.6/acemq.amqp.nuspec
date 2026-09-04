@@ -11,7 +11,7 @@
     <description>AMQP for C# and VB.NET: reliable publishing with confirms, consumers with explicit dispositions, and the AceMQ message envelope.</description>
     <copyright>Copyright 2026 AceMQ</copyright>
     <tags>amqp rabbitmq messaging queue vb.net</tags>
-    <repository type="git" url="https://github.com/AceMQ-Company/acemq-dotnet-amqp" commit="4aefbcd84e550e06e4eb96f3605bf36f971c1dcb" />
+    <repository type="git" url="https://github.com/AceMQ-Company/acemq-dotnet-amqp" branch="refs/heads/main" commit="0675c20efdca9aacfa0abe16ad27dd1415ac7090" />
     <dependencies>
       <group targetFramework=".NETStandard2.0">
         <dependency id="System.Diagnostics.DiagnosticSource" version="8.0.1" exclude="Build,Analyzers" />
