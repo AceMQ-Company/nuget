@@ -82,7 +82,60 @@ with open("index.json", "w") as f:
     }, f, indent=2)
     f.write("\n")
 
-count = sum(len(json.load(open(os.path.join(container, p, "index.json")))["versions"])
-            for p in ids)
+listed = []
+for pid in ids:
+    versions = json.load(open(os.path.join(container, pid, "index.json")))["versions"]
+    # The nuspec of the newest version carries the name and blurb to show.
+    newest = versions[-1]
+    nuspec = os.path.join(container, pid, newest, f"{pid}.nuspec")
+    name, description = pid, ""
+    if os.path.exists(nuspec):
+        xml = open(nuspec, encoding="utf-8").read()
+        m = re.search(r"<id>([^<]+)</id>", xml)
+        if m:
+            name = m.group(1)
+        m = re.search(r"<description>([^<]*)</description>", xml, re.S)
+        if m:
+            description = " ".join(m.group(1).split())
+    listed.append((name, newest, versions, description))
+
+# The landing page's package list is generated, because a hand-written one goes
+# stale on the first release and then quietly misinforms every visitor.
+def escape(text):
+    return (text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+                .replace('"', "&quot;"))
+
+
+if listed:
+    rows = []
+    for name, newest, versions, description in listed:
+        older = ""
+        if len(versions) > 1:
+            older = ("<br><span style=\"font-size:.85em\">also " +
+                     ", ".join(escape(v) for v in reversed(versions[:-1])) + "</span>")
+        rows.append(
+            "    <tr><td><code>{0}</code></td><td>{1}{2}</td><td>{3}</td></tr>".format(
+                escape(name), escape(newest), older, escape(description)))
+    block = ("  <table>\n"
+             "    <tr><th>Package</th><th>Version</th><th></th></tr>\n"
+             + "\n".join(rows) + "\n  </table>")
+else:
+    block = ("  <div class=\"card\">\n"
+             "    <p><strong>Empty for now.</strong> The feed and its tooling work and are tested,\n"
+             "       but nothing has been published to it yet.</p>\n  </div>")
+
+page = "index.html"
+if os.path.exists(page):
+    html = open(page, encoding="utf-8").read()
+    start, end = "<!-- packages:start", "<!-- packages:end -->"
+    i, j = html.find(start), html.find(end)
+    if i != -1 and j != -1:
+        head = html[:i] + "<!-- packages:start -- written by scripts/publish.sh; do not edit by hand -->\n"
+        open(page, "w", encoding="utf-8").write(head + block + "\n  " + html[j:])
+        print(f"index.html lists {len(listed)} package(s)")
+    else:
+        print("index.html has no packages block; leaving it alone")
+
+count = sum(len(v[2]) for v in listed)
 print(f"feed at {base}: {len(ids)} package id(s), {count} version(s)")
 PY
