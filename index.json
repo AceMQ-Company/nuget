@@ -1,0 +1,10 @@
+{
+  "version": "3.0.0",
+  "resources": [
+    {
+      "@id": "https://acemq.org/nuget/v3/flatcontainer/",
+      "@type": "PackageBaseAddress/3.0.0",
+      "comment": "Package content (.nupkg) and the version list for each id."
+    }
+  ]
+}
