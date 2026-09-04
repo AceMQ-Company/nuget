@@ -14,6 +14,6 @@
     <packageTypes>
       <packageType name="DotnetTool" />
     </packageTypes>
-    <repository type="git" url="https://github.com/AceMQ-Company/acemq-dotnet-amqp" branch="refs/heads/main" commit="0675c20efdca9aacfa0abe16ad27dd1415ac7090" />
+    <repository type="git" url="https://github.com/AceMQ-Company/acemq-dotnet-amqp" branch="refs/heads/main" commit="49591edd6ea981938f8f724a718dbf67f6728807" />
   </metadata>
 </package>
