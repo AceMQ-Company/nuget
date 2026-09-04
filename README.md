@@ -49,6 +49,30 @@ assumed:
 | `dotnet package search` | **fails**: `The source does not have a Search service!` |
 | Browsing the feed in Visual Studio's package manager UI | **not available** — it needs the search resource |
 | `dotnet nuget push` | **not available** — see below |
+| `dotnet tool install` | **fails** with a NullReferenceException — see below |
+
+### Installing a tool from this feed
+
+`dotnet tool install --add-source https://acemq.org/nuget/index.json` dies with an
+unhandled `NullReferenceException`. The tool installer wants resources a static feed
+does not have, and unlike `dotnet package search` it crashes rather than saying so.
+
+`--add-source` alone is not the fix either: it *adds to* the configured sources, so
+the feed is still queried. Download the package and install with a `--configfile`
+that names only the local folder:
+
+```bash
+curl -fsSLO https://acemq.org/nuget/v3/flatcontainer/acemq.amqp.devcerts/0.1.6/acemq.amqp.devcerts.0.1.6.nupkg
+cat > tool.config <<'XML'
+<?xml version="1.0" encoding="utf-8"?>
+<configuration><packageSources><clear />
+  <add key="local" value="." />
+</packageSources></configuration>
+XML
+dotnet tool install -g AceMq.Amqp.DevCerts --version 0.1.6 --configfile tool.config
+```
+
+Ordinary `PackageReference` restores are unaffected.
 
 So a project that names its packages and versions restores and builds against this
 feed exactly as it would against nuget.org. What it cannot do is *discover*
