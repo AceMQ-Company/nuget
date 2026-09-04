@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>AceMq.Amqp.RabbitMq</id>
+    <version>0.1.3</version>
+    <authors>AceMQ</authors>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <readme>README.md</readme>
+    <projectUrl>https://acemq.org/acemq-dotnet-amqp/</projectUrl>
+    <description>RabbitMQ transport for AceMq.Amqp.</description>
+    <copyright>Copyright 2026 AceMQ</copyright>
+    <tags>amqp rabbitmq messaging queue vb.net</tags>
+    <repository type="git" url="https://github.com/AceMQ-Company/acemq-dotnet-amqp" commit="38989e9bab402367efad796dc6998f2caf0c7214" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="AceMq.Amqp" version="0.1.3" exclude="Build,Analyzers" />
+        <dependency id="RabbitMQ.Client" version="7.2.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
