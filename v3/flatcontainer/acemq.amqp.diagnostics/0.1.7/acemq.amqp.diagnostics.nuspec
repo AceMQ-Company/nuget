@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>AceMq.Amqp.Diagnostics</id>
+    <version>0.1.7</version>
+    <authors>AceMQ</authors>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <readme>README.md</readme>
+    <projectUrl>https://acemq.org/acemq-dotnet-amqp/</projectUrl>
+    <description>A small actuator for AceMq.Amqp: Prometheus metrics, health and version over HTTP, with no ASP.NET Core or OpenTelemetry dependency.</description>
+    <copyright>Copyright 2026 AceMQ</copyright>
+    <tags>amqp rabbitmq messaging queue vb.net</tags>
+    <repository type="git" url="https://github.com/AceMQ-Company/acemq-dotnet-amqp" commit="6b28759d8d18b7574911a2a1dac411b13cfa54e9" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="AceMq.Amqp" version="0.1.7" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
