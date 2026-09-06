@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>AceMq.Amqp.DevCerts</id>
+    <version>0.1.8</version>
+    <authors>AceMQ</authors>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <readme>README.md</readme>
+    <projectUrl>https://acemq.org/acemq-dotnet-amqp/</projectUrl>
+    <description>Development certificates for AceMQ: a certificate authority, a server certificate and a client certificate, all stamped so the library refuses them unless development certificates are explicitly allowed.</description>
+    <copyright>Copyright 2026 AceMQ</copyright>
+    <tags>amqp rabbitmq messaging queue vb.net</tags>
+    <packageTypes>
+      <packageType name="DotnetTool" />
+    </packageTypes>
+    <repository type="git" url="https://github.com/AceMQ-Company/acemq-dotnet-amqp" commit="31ec9c97b33de71e8ddcea252e42efcaefe1bbd3" />
+  </metadata>
+</package>

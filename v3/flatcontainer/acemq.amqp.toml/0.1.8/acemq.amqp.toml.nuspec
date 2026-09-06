@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>AceMq.Amqp.Toml</id>
+    <version>0.1.8</version>
+    <authors>AceMQ</authors>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <readme>README.md</readme>
+    <projectUrl>https://acemq.org/acemq-dotnet-amqp/</projectUrl>
+    <description>TOML codec for AceMq.Amqp, for configuration-shaped messages a person edits. A separate package so the core keeps no serialization dependency.</description>
+    <copyright>Copyright 2026 AceMQ</copyright>
+    <tags>amqp rabbitmq messaging queue vb.net toml</tags>
+    <repository type="git" url="https://github.com/AceMQ-Company/acemq-dotnet-amqp" commit="31ec9c97b33de71e8ddcea252e42efcaefe1bbd3" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="AceMq.Amqp" version="0.1.8" exclude="Build,Analyzers" />
+        <dependency id="Tomlyn" version="2.10.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
