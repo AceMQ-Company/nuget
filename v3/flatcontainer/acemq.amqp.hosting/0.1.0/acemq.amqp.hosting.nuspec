@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>AceMq.Amqp.Hosting</id>
+    <version>0.1.0</version>
+    <authors>AceMQ</authors>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <readme>README.md</readme>
+    <projectUrl>https://acemq.org/acemq-dotnet-amqp-hosting/</projectUrl>
+    <description>Dependency injection and hosted-service integration for AceMQ AMQP: AddAceMq, typed message handlers resolved from the container, a consumer host that drains on shutdown, and an IHealthCheck.</description>
+    <copyright>Copyright 2026 AceMQ</copyright>
+    <tags>amqp rabbitmq messaging queue dependency-injection hosting aspnetcore</tags>
+    <repository type="git" url="https://github.com/AceMQ-Company/acemq-dotnet-amqp-hosting" commit="7f0d0e11a9f4b791e6b2066f8e333107e9bf5190" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="AceMq.Amqp" version="0.7.0" exclude="Build,Analyzers" />
+        <dependency id="AceMq.Amqp.RabbitMq" version="0.7.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Diagnostics.HealthChecks" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Hosting" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Options.ConfigurationExtensions" version="8.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="AceMq.Amqp" version="0.7.0" exclude="Build,Analyzers" />
+        <dependency id="AceMq.Amqp.RabbitMq" version="0.7.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Diagnostics.HealthChecks" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Hosting" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Options.ConfigurationExtensions" version="8.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
