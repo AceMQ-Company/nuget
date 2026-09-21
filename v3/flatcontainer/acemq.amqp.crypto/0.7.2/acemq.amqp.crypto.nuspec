@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>AceMq.Amqp.Crypto</id>
+    <version>0.7.2</version>
+    <authors>AceMQ</authors>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <readme>README.md</readme>
+    <projectUrl>https://acemq.org/acemq-dotnet-amqp/</projectUrl>
+    <description>Payload encryption for AceMq.Amqp. AES-256-GCM in the framing the Java, Python, Ruby and Go libraries read and write, so an encrypted message crosses languages. A separate package so the core takes no cryptography dependency.</description>
+    <copyright>Copyright 2026 AceMQ</copyright>
+    <tags>amqp rabbitmq messaging queue vb.net encryption aes-gcm</tags>
+    <repository type="git" url="https://github.com/AceMQ-Company/acemq-dotnet-amqp" commit="042f1a84bdf9779f636ebf096b1d212a396f2670" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="AceMq.Amqp" version="0.7.2" exclude="Build,Analyzers" />
+        <dependency id="BouncyCastle.Cryptography" version="2.7.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="AceMq.Amqp" version="0.7.2" exclude="Build,Analyzers" />
+        <dependency id="BouncyCastle.Cryptography" version="2.7.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
